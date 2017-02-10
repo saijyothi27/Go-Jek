@@ -28,7 +28,9 @@ public class DriverFactory {
 
     public WebDriver createNewDriverInstance() {
         driver = new ChromeDriver();
-        System.setProperty("webdriver.chrome.driver", "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
+        String pathToChrome = "C:\\Users\\saijyoth\\Downloads\\chromedriver_win32\\chromedriver.exe";
+        System.setProperty("webdriver.chrome.driver", pathToChrome);
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://cleartrip.com");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
